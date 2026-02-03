@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import FirstScreen from './screens/FirstScreen';
+import  SecondScreen from './screens/SecondScreen';
 
 
 const Stack = createStackNavigator();
@@ -12,6 +13,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName='pamja1'>
         <Stack.Screen name="pamja1" component={FirstScreen} ></Stack.Screen>
+        <Stack.Screen name="pamja2" component={SecondScreen} ></Stack.Screen>
       </Stack.Navigator>
       
    </NavigationContainer>

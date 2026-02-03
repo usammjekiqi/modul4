@@ -1,10 +1,11 @@
 import react from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet ,Button} from 'react-native';
 
-const FirstScreen = () => {
+const FirstScreen = (props) => {
     return (
         <View style={styles.container}>
             <Text style={styles.text}>Welcomoe to the FirstScreen</Text>
+            <Button title='Go to Second Screen' onPress={() =>{props.navigation.navigate("pamja2")}}/>
         </View>
     );
 }
