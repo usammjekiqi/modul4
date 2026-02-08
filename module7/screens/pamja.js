@@ -1,11 +1,11 @@
 import react from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 
-const SecondScreen = (props) => {
+const pamja = (props) => {
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Welcomoe to the SecondScreen</Text>
-            <Button title='Go to pamja3' onPress={() =>{props.navigation.navigate("pamja3")}}/>
+            <Text style={styles.text}>Welcomoe to the pamja3</Text>
+            <Button title='Go to pamja4' onPress={() =>{props.navigation.navigate("pamja4")}}/>
         </View>
     );
 }
@@ -24,4 +24,4 @@ const styles = StyleSheet.create({
     },
 });
 
-export default SecondScreen;
+export default pamja;
