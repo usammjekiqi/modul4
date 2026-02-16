@@ -6,6 +6,9 @@ import FirstScreen from './screens/FirstScreen';
 import  SecondScreen from './screens/SecondScreen';
 import  pamja from './screens/pamja';
 import  pamja4 from './screens/pamja4';
+import TestScreen from './screens/TestScreen';
+import MenuScreen from './screens/MenuScreen';
+import StudentsScreen from './screens/StudentsScreen';
 
 
 const Stack = createStackNavigator();
@@ -13,11 +16,16 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='pamja1'>
-        <Stack.Screen name="pamja1" component={FirstScreen} ></Stack.Screen>
+      <Stack.Navigator initialRouteName='Home' >
+        {/* <Stack.Screen name="pamja1" component={FirstScreen} ></Stack.Screen>
         <Stack.Screen name="pamja2" component={SecondScreen} ></Stack.Screen>
         <Stack.Screen name="pamja3" component={pamja} ></Stack.Screen>
-        <Stack.Screen name="pamja4" component={pamja4} ></Stack.Screen>
+        <Stack.Screen name="pamja4" component={pamja4} ></Stack.Screen> */}
+        <Stack.Screen name='Home' component={MenuScreen} ></Stack.Screen>
+        <Stack.Screen name='Test' component={TestScreen} ></Stack.Screen>
+        <Stack.Screen name='Students' component={StudentsScreen} ></Stack.Screen>
+       
+
       </Stack.Navigator>
       
    </NavigationContainer>
