@@ -1,34 +1,38 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import FirstScreen from './screens/FirstScreen';
-import  SecondScreen from './screens/SecondScreen';
-import  pamja from './screens/pamja';
-import  pamja4 from './screens/pamja4';
+import Contact from './screens/Contact';
+import { createStackNavigator } from '@react-navigation/stack';
+import Home from './screens/Home';
+import FlatListsExample from './screens/FlatListsExample';
+import SecondExample from './screens/SecondExample';
+import React from 'react';
+import ButtonScreen from './screens/ButtonScreen';
 import TestScreen from './screens/TestScreen';
 import MenuScreen from './screens/MenuScreen';
-import StudentsScreen from './screens/StudentsScreen';
+import StudentScreen from './screens/StudentScreen';
+import ProfileScreen from './screens/ProfileScreen';
 
+const Stack =  createStackNavigator();
 
-const Stack = createStackNavigator();
+let mesazhi = "Hello World!"
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Home' >
-        {/* <Stack.Screen name="pamja1" component={FirstScreen} ></Stack.Screen>
-        <Stack.Screen name="pamja2" component={SecondScreen} ></Stack.Screen>
-        <Stack.Screen name="pamja3" component={pamja} ></Stack.Screen>
-        <Stack.Screen name="pamja4" component={pamja4} ></Stack.Screen> */}
-        <Stack.Screen name='Home' component={MenuScreen} ></Stack.Screen>
-        <Stack.Screen name='Test' component={TestScreen} ></Stack.Screen>
-        <Stack.Screen name='Students' component={StudentsScreen} ></Stack.Screen>
-       
-
+      <Stack.Navigator initialRouteName='ProfileScreen'> 
+      <Stack.Screen name="MenuScreen" component={MenuScreen}></Stack.Screen>
+      <Stack.Screen name="Test" component={TestScreen}></Stack.Screen>
+      <Stack.Screen name="Students" component={StudentScreen}></Stack.Screen>
+      <Stack.Screen name="ProfileScreen" component={ProfileScreen}></Stack.Screen>
+    
       </Stack.Navigator>
-      
-   </NavigationContainer>
+    </NavigationContainer>
+
+
+
+
+
   );
 }
 
@@ -39,4 +43,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  TextStyle: {
+    color: 'blue',
+    fontSize: 40,
+  }
 });
+
