@@ -1,69 +1,61 @@
 import React from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, ScrollView } from 'react-native';
+import StudentInfo from '../components/StudentInfo';
+import Projects from '../components/Projects';
 
-
-const StudentInfo = (props) => {
-   
+const ProfileScreen = () => {
     return (
-        <View style={styles.container}>
-            <View style={styles.cardWrapper}>
-                <Image source={props.image} style={styles.img} />
-                <View style={styles.infoWrapper}>
-                    <Text style={styles.name}>{props.fullname || props.name}</Text>
-                    {props.position ? <Text style={styles.position}>{props.position}</Text> : null}
-                    {props.description ? <Text style={styles.description}>{props.description}</Text> : null}
-                </View>
+
+        <ScrollView
+            style={{ flex: 1, backgroundColor: '#f7f8fa' }}
+            contentContainerStyle={{ paddingVertical: 24, paddingHorizontal: 12, alignItems: 'center' }}
+        >
+            <View style={styles.header}>
+                <Text style={styles.screenTitle}>Profile</Text>
             </View>
-        </View>
-    );
+
+            <StudentInfo
+                fullname="John Doe"
+                position="Student"
+                description="A passionate student interested in web development. Loves building user interfaces and learning new frameworks."
+                image={require('../assets/download.jpg')}
+            />
+
+            <View style={{ width: '100%', marginTop: 8 }}>
+                <Text style={styles.sectionTitle}>Projects</Text>
+                <Projects image={require('../assets/projet.jpg')} title={'School Project'} description={'A basic school assignment demonstrating layout.'} />
+            </View>
+        </ScrollView>
+    )
 }
 
-const styles = StyleSheet.create({
-    container: {
-        paddingVertical: 8,
-        width: '100%'
-    },
-    cardWrapper: {
-        flexDirection: 'row',
-        backgroundColor: '#ffffff',
-        borderRadius: 10,
-        width: '95%',
-        alignSelf: 'center',
-        marginBottom: 12,
-        padding: 12,
+ const styles =StyleSheet.create({
+    textStyle: {
+        fontSize: 30,
+        textAlign: 'center',
+        marginVertical: 20,
+        color: '#111'
+    }
+ });
+
+export const extraStyles = StyleSheet.create({
+    header: {
+        width: '100%',
         alignItems: 'center',
-        shadowColor: '#000',
-        shadowOpacity: 0.05,
-        shadowRadius: 6,
-        shadowOffset: { width: 0, height: 2 },
-        elevation: 2
+        marginBottom: 8
     },
-    img: {
-        width: 80,
-        height: 80,
-        borderRadius: 40,
-        resizeMode: 'cover'
-    },
-    infoWrapper: {
-        flex: 1,
-        paddingLeft: 12,
-        justifyContent: 'center'
-    },
-    name: {
+    screenTitle: {
+        fontSize: 22,
         fontWeight: '700',
-        fontSize: 18,
         color: '#111'
     },
-    position: {
-        color: '#666',
-        fontSize: 14,
-        marginTop: 4
-    },
-    description: {
-        marginTop: 8,
-        color: '#333'
+    sectionTitle: {
+        fontSize: 18,
+        fontWeight: '600',
+        color: '#111',
+        marginVertical: 12,
+        paddingHorizontal: 12
     }
 });
 
-
-export default StudentInfo;
+export default ProfileScreen;

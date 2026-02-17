@@ -1,16 +1,15 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { StatusBar } from 'expo-status-bar';
+
 import { StyleSheet, Text, View } from 'react-native';
-import Contact from './screens/Contact';
+
 import { createStackNavigator } from '@react-navigation/stack';
-import Home from './screens/Home';
-import FlatListsExample from './screens/FlatListsExample';
-import SecondExample from './screens/SecondExample';
+
+
 import React from 'react';
-import ButtonScreen from './screens/ButtonScreen';
+
 import TestScreen from './screens/TestScreen';
 import MenuScreen from './screens/MenuScreen';
-import StudentScreen from './screens/StudentScreen';
+import StudentScreen from './screens/StudentsScreen';
 import ProfileScreen from './screens/ProfileScreen';
 
 const Stack =  createStackNavigator();
